@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Humulani</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header id="navbar">
+  <%= render 'shared/navbar' %>
+</header>
+
+<div id="wrap">
+  <div id="main" class="container clear-top">
+    <%= yield %>
+  </div>
+</div>
+
+<footer class="footer">
+  <%= render 'shared/footer' %>
+</footer>
+
+
+</body>
+</html>

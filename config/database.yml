@@ -1,0 +1,12 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: maputo_development
+  pool: 5
+  template: template0
+
+test:
+  adapter: sqlite3
+  database: db/test<%= ENV['TEST_ENV_NUMBER'] %>
+  pool: 5
+  timeout: 5000

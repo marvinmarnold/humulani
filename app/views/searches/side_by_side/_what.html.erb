@@ -1,0 +1,20 @@
+<%= f.simple_fields_for :room_searches do |r| %>
+  <div class="row-fluid">
+    <div class="span4"><%= r.label :adults %></div>
+    <div class="span3">
+      <%= r.input_field :adults, 
+      class: 'search-query input-mini',
+      as: :select, collection: room_occupancy_ops, selected: search.suggested_adults %>
+          <span class="help-block">
+      <%= t "simple_form.placeholders.search.adults" %>
+    </span>
+    
+    </div>
+    <div class="span2">
+      <%= r.link_to_remove "Remove", :class => 'btn btn-mini btn-danger', as: :integer %>
+    </div>
+  </div>
+<% end %>
+
+<%= f.link_to_add "Add room", :room_searches, :class => 'btn btn-mini btn-info' %>
+

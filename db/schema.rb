@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130704102820) do
+ActiveRecord::Schema.define(version: 20130704123611) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "room_searches", force: true do |t|
+    t.integer  "search_id"
+    t.integer  "adults"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "room_searches", ["search_id"], name: "index_room_searches_on_search_id"
 
   create_table "searches", force: true do |t|
     t.integer  "user_id"
@@ -27,9 +33,9 @@ ActiveRecord::Schema.define(version: 20130704102820) do
     t.datetime "updated_at"
   end
 
-  add_index "searches", ["item_id"], name: "index_searches_on_item_id", using: :btree
-  add_index "searches", ["shop_id"], name: "index_searches_on_shop_id", using: :btree
-  add_index "searches", ["user_id"], name: "index_searches_on_user_id", using: :btree
+  add_index "searches", ["item_id"], name: "index_searches_on_item_id"
+  add_index "searches", ["shop_id"], name: "index_searches_on_shop_id"
+  add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
   create_table "users", force: true do |t|
     t.integer  "profile_id"
@@ -38,6 +44,6 @@ ActiveRecord::Schema.define(version: 20130704102820) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["profile_id", "profile_type"], name: "index_users_on_profile_id_and_profile_type", using: :btree
+  add_index "users", ["profile_id", "profile_type"], name: "index_users_on_profile_id_and_profile_type"
 
 end

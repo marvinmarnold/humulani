@@ -17,6 +17,9 @@ en:
     placeholders:
       search:
         keyword: "search..."
+        check_in_at: "mm/dd/yy"
+        check_out_at: "mm/dd/yy"
+        adults: "# people"
             #   password: 'Password'
     #   user:
     #     new:

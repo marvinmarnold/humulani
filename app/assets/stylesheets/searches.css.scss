@@ -1,6 +1,10 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.main-search-area {
-  background-color: #74EC94;
+.well.main-search-area {
+  min-height: 15em;
+}
+
+.night-counter {
+  text-align: right;
 }

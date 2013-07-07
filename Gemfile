@@ -38,7 +38,9 @@ group :test, :development do
   gem 'better_errors'
   gem 'sqlite3'
   gem 'binding_of_caller'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 gem 'twitter-bootstrap-rails'

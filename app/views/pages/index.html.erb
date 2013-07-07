@@ -1,19 +1,18 @@
-<div class="hero-unit">
-  <h3>Hotel search</h3>
-  <p>Search for hotels in Mozambique. Fast. Simple. Secure.</p>
-  <%= simple_form_for(@search, :html => {:class => 'form-horizontal' }) do |f| %>
+<h3>Search hotels</h3>
+<%= simple_nested_form_for(@search, :html => {:class => 'form-search' }) do |f| %>
+<%= f.error_notification %>
   <div class="row-fluid">
     <div class="span4 well main-search-area">
       <h4>Step 1: Where</h4>
-      <br/>
-      <%= f.input :keyword, label: false %>
+      <%= f.input :keyword, label: false, input_html: { class: 'search-query'} %>
     </div>
     <div class="span4 well main-search-area">
       <h4>Step 2: When</h4>
+      <%= render 'searches/side_by_side/when', f: f %>
     </div>
     <div class="span4 well main-search-area">
       <h4>Step 3: What</h4>
+      <%= render 'searches/side_by_side/what', f: f, search: @search %>
     </div>
   </div>
-  <% end %>
-</div>
+<% end %>

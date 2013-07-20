@@ -1,7 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
 
-
+@navbarHeight: 64px;
 body {
   padding-top: @navbarHeight + 50px;
 }
@@ -33,3 +33,17 @@ body {
 //
 // Example:
 // @linkColor: #ff0000;
+
+.brand {
+  // Vertically center the text given $navbarHeight
+  @elementHeight: 20px;
+  padding: ((@navbarHeight - @elementHeight) / 2 - 2) 20px ((@navbarHeight - @elementHeight) / 2 + 2);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.navbar .nav > li > a {
+  @elementHeight: 20px;
+  padding: ((@navbarHeight - @elementHeight) / 2 - 1) 10px ((@navbarHeight - @elementHeight) / 2 + 1);
+  line-height: 19px;
+}

@@ -47,4 +47,4 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 
 gem 'simple_form'
-gem 'nested_form'
+gem 'devise', '3.0.0.rc'

@@ -4,6 +4,10 @@
       <%= content_tag 'a', class: "brand logo", href: root_path do %>
         <%= image_tag "logo_white64.png"%>
       <% end %>
+      
+      <% if current_user.guest? %>
+        <%= render 'shared/guest_navbar' %>
+      <% end %>
     </div>
   </div>
 </div>
